@@ -1,0 +1,45 @@
+<script>
+    // Mendefinisikan variabel dengan data pegawai
+let nama = "Deni saputra";
+let jabatan = "asisten manager";
+let status = "belum menikah"; // atau "belum menikah"
+
+
+// Menghitung gaji pokok berdasarkan jabatan
+let gajipokok = 0;
+switch(jabatan){
+    case 'manager': gajipokok = 10000000; break;
+    case 'asisten manager': gajipokok = 8000000; break;
+    case 'staff': gajipokok = 5000000; break;
+    default: gajipokok = 0;
+}
+
+
+// Menghitung tunjangan jabatan
+let tunjanganJabatan = 0.1 * gajipokok;
+
+// Menghitung BPJS
+let bpjs = 0.1 * gajipokok;
+
+// Menghitung tunjangan keluarga jika sudah menikah
+let tunjanganKeluarga = (status == 'menikah') ? 0.1 * gajipokok : 0;
+
+// Menghitung total pendapatan atau penghasilan
+let totalPenghasilan = gajipokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+// Mencetak data pegawai
+document.write("Data Pegawai " +
+    "<br> Nama Pegawai : " + nama +
+    "<br> Jabatan  : " + jabatan +
+    "<br> Status : " + status +
+    "<br><hr/>" +
+    "<b> Data Gaji dan Tunjangan Pegawai </b>" +
+    "<br> Gaji Pokok : "+"Rp" + gajipokok +
+    "<br> Tunjangan Jabatan : "+ "Rp" + tunjanganJabatan +
+    "<br> BPJS : "+ "Rp" + bpjs +
+    "<br> Tunjangan Keluarga : "+ "Rp" + tunjanganKeluarga +
+    "<br><hr/>" +
+    "<b> Data Total Penghasilan Pegawai </b>" +
+    "<br> Total Penghasilan : "+ "Rp" + totalPenghasilan
+    );
+</script>
